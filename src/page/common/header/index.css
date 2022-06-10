@@ -2,16 +2,16 @@
 * @Author: stephen
 * @Date:   2022-05-31 16:00:46
 * @Last Modified by:   stephen
-* @Last Modified time: 2022-05-31 16:22:32
+* @Last Modified time: 2022-06-10 15:46:32
 */
 
 /* 通用头部导航 */
 .header .logo{
     position: absolute;
-    left: 40px;
+    left: 0px;
     top: 34px;
     display: block;
-    font-size: 36px;
+    font-size: 32px;
     color: #c60023;
     font-weight: bold;
     text-decoration: none;
@@ -21,7 +21,7 @@
     padding: 40px 0 30px 250px;
 }
 .header .search-con .search-input{
-    width: 550px;
+    width: 720px;
     height: 40px;
     line-height: 40px;
     padding-left: 10px;
@@ -33,6 +33,8 @@
     position: absolute;
     height: 44px;
     width: 100px;
+    text-align: center;
+
 }
 
 /* 面包屑导航 */
