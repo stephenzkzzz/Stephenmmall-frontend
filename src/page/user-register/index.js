@@ -2,7 +2,7 @@
 * @Author: stephen
 * @Date:   2022-06-07 14:15:15
 * @Last Modified by:   stephen
-* @Last Modified time: 2022-06-07 14:28:06
+* @Last Modified time: 2022-06-12 16:43:17
 */
 'use strict';
 require('./index.css');
@@ -99,7 +99,7 @@ var page = {
         }
         // 验证密码长度
         if(formData.password.length < 6){
-            result.msg = 'Password length should be less than six words';
+            result.msg = 'Password length should not be less than six words';
             return result;
         }
         // 验证两次输入的密码是否一致

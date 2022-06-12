@@ -2,7 +2,7 @@
 * @Author: stephen
 * @Date:   2022-05-28 16:35:32
 * @Last Modified by:   stephen
-* @Last Modified time: 2022-06-10 16:39:29
+* @Last Modified time: 2022-06-12 16:18:01
 */
 var webpack  = require('webpack');
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
@@ -28,6 +28,7 @@ var config = {
 		'common':['./src/page/common/index.js'],
 		'index':['./src/page/index/index.js'],
 		'list':['./src/page/list/index.js'],
+		'cart':['./src/page/cart/index.js'],
 		'detail':['./src/page/detail/index.js'],
 		'user-login':['./src/page/user-login/index.js'],
 		'user-register':['./src/page/user-register/index.js'],
@@ -72,6 +73,7 @@ var config = {
 		//html模板的处理
 		new HtmlWebpackPlugin(getHtmlConfig('index','Main Page')),
 		new HtmlWebpackPlugin(getHtmlConfig('list','Product List')),
+		new HtmlWebpackPlugin(getHtmlConfig('cart','Shopping Cart')),
 		new HtmlWebpackPlugin(getHtmlConfig('detail','Product detail')),
 		new HtmlWebpackPlugin(getHtmlConfig('user-login','Sign in')),
 		new HtmlWebpackPlugin(getHtmlConfig('user-register','Sign up')),
@@ -80,7 +82,20 @@ var config = {
 		new HtmlWebpackPlugin(getHtmlConfig('user-center','User Center')),
 		new HtmlWebpackPlugin(getHtmlConfig('user-center-update','User info update')),
 		new HtmlWebpackPlugin(getHtmlConfig('result','Result')),
-	]
+	],
+
+	//使用后端的数据导入作为示例
+	devServer: {
+        port: 8088,
+        inline: true,
+        proxy : {
+            '**/*.do' : {
+                target: 'http://test.happymmall.com',
+                changeOrigin : true
+            }
+        }
+    }
+
 };
 
 if('dev' === WEBPACK_ENV){
