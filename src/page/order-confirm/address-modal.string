@@ -1,0 +1,57 @@
+<div class="modal close">
+    <div class="modal-container">
+        <div class="modal-header">
+            {{#isUpdate}}
+            <h1 class="modal-title">Update</h1>
+            {{/isUpdate}}
+            {{^isUpdate}}
+            <h1 class="modal-title">New Address</h1>
+            {{/isUpdate}}
+            <i class="fa fa-close close"></i>  
+        </div>
+        <div class="modal-body">
+            <div class="form">
+                <div class="form-line">
+                    <label class="label" for="receiver-name">
+                        <span class="required">*</span>Receiver：
+                    </label>
+                    <input class="form-item" id="receiver-name" placeholder="To?" value="{{data.receiverName}}" />
+                </div>
+                <div class="form-line">
+                    <label class="label" for="receiver-province">
+                        <span class="required">*</span>
+                        City：
+                    </label>
+                    <select class="form-item" id="receiver-province">
+                        <option value="">Please Select</option>
+                    </select>
+                    <select class="form-item" id="receiver-city">
+                        <option value="">Please Select</option>
+                    </select>
+                </div>
+                <div class="form-line">
+                    <label class="label" for="receiver-address">
+                        <span class="required">*</span>
+                        Address：
+                    </label>
+                    <input class="form-item" id="receiver-address" placeholder="Enter detailed location" value="{{data.receiverAddress}}"/>
+                </div>
+                <div class="form-line">
+                    <label class="label" for="receiver-phone">
+                        <span class="required">*</span>
+                        Tel：
+                    </label>
+                    <input class="form-item" id="receiver-phone" placeholder="Enter right Tel number"  value="{{data.receiverPhone}}"/>
+                </div>
+                <div class="form-line">
+                    <label class="label" for="receiver-zip">Postcode：</label>
+                    <input class="form-item" id="receiver-zip" placeholder="如：100000"  value="{{data.receiverZip}}"/>
+                </div>
+                <div class="form-line">
+                    <input type="hidden" id="receiver-id" value="{{data.id}}" />  
+                    <a class="btn address-btn">Save</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

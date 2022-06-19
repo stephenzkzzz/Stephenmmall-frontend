@@ -2,7 +2,7 @@
 * @Author: stephen
 * @Date:   2022-05-28 16:35:32
 * @Last Modified by:   stephen
-* @Last Modified time: 2022-06-12 16:18:01
+* @Last Modified time: 2022-06-19 16:26:44
 */
 var webpack  = require('webpack');
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
@@ -29,6 +29,10 @@ var config = {
 		'index':['./src/page/index/index.js'],
 		'list':['./src/page/list/index.js'],
 		'cart':['./src/page/cart/index.js'],
+		'order-confirm':['./src/page/order-confirm/index.js'],
+        'order-list':['./src/page/order-list/index.js'],
+        'order-detail':['./src/page/order-detail/index.js'],
+        'payment':['./src/page/payment/index.js'],
 		'detail':['./src/page/detail/index.js'],
 		'user-login':['./src/page/user-login/index.js'],
 		'user-register':['./src/page/user-register/index.js'],
@@ -36,7 +40,9 @@ var config = {
 		'user-pass-update':['./src/page/user-pass-update/index.js'],
 		'user-center':['./src/page/user-center/index.js'],
 		'user-center-update':['./src/page/user-center-update/index.js'],
+		'user-pass-update':['./src/page/user-pass-update/index.js'],
 		'result':['./src/page/result/index.js'],
+		'about':['./src/page/about/index.js'],
 	},
 	output:{
 		path:'./dist',
@@ -75,6 +81,10 @@ var config = {
 		new HtmlWebpackPlugin(getHtmlConfig('list','Product List')),
 		new HtmlWebpackPlugin(getHtmlConfig('cart','Shopping Cart')),
 		new HtmlWebpackPlugin(getHtmlConfig('detail','Product detail')),
+		new HtmlWebpackPlugin(getHtmlConfig('order-confirm', 'Order Confirm')),
+        new HtmlWebpackPlugin(getHtmlConfig('order-list', 'Order List')),
+        new HtmlWebpackPlugin(getHtmlConfig('order-detail', 'Order detail')),
+        new HtmlWebpackPlugin(getHtmlConfig('payment', 'Order Payment')),
 		new HtmlWebpackPlugin(getHtmlConfig('user-login','Sign in')),
 		new HtmlWebpackPlugin(getHtmlConfig('user-register','Sign up')),
 		new HtmlWebpackPlugin(getHtmlConfig('user-pass-reset','Password reset')),
@@ -82,6 +92,7 @@ var config = {
 		new HtmlWebpackPlugin(getHtmlConfig('user-center','User Center')),
 		new HtmlWebpackPlugin(getHtmlConfig('user-center-update','User info update')),
 		new HtmlWebpackPlugin(getHtmlConfig('result','Result')),
+		new HtmlWebpackPlugin(getHtmlConfig('about', 'About MMall')),
 	],
 
 	//使用后端的数据导入作为示例
