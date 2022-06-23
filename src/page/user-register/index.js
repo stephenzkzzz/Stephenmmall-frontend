@@ -2,7 +2,7 @@
 * @Author: stephen
 * @Date:   2022-06-07 14:15:15
 * @Last Modified by:   stephen
-* @Last Modified time: 2022-06-12 16:43:17
+* @Last Modified time: 2022-06-23 20:44:32
 */
 'use strict';
 require('./index.css');
@@ -89,12 +89,12 @@ var page = {
         };
         // 验证用户名是否为空
         if(!_mm.validate(formData.username, 'require')){
-            result.msg = 'Username should bot be blank';
+            result.msg = 'Username should not be blank';
             return result;
         }
         // 验证密码是否为空
         if(!_mm.validate(formData.password, 'require')){
-            result.msg = 'Password should bot be blank';
+            result.msg = 'Password should not be blank';
             return result;
         }
         // 验证密码长度
