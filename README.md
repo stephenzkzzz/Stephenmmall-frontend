@@ -1,4 +1,4 @@
 # Stephenmmall-fe
 
 #### Introduction
-master
+Online Shopping Website Server using SSM (Spring + SpringMVC + MyBatis), MySQL, JDBC
